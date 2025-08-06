@@ -1,0 +1,79 @@
+.header {
+    padding: 30px 50px;
+}
+
+.bg-green {
+    background-color: rgb(92, 255, 92);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+.hero {
+    display: flex;
+    gap: 30px;
+    padding: 100px 150px;
+    justify-content: center;
+    background-color: rgb(214, 255, 255);
+}
+
+.hero-picture img {
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    object-position: right;
+}
+
+.hero-desc button {
+    padding: 10px 20px;
+    background: blue;
+    color: white;
+    border-radius: 20px;
+    border: none;
+}
+
+.about {
+    margin: 100px;
+    background-color: antiquewhite;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.about h2 {
+    margin-top: 0;
+}
+.about p {
+    margin-bottom: 0;
+}
+
+.data-portofolio {
+    margin: 100px;
+    display: flex;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: aqua;
+}
+.data-diri {
+    width: 50%;
+}
+.riwayat-pendidikan {
+    width: 50%;
+}
+.riwayat-pendidikan-data {
+    border-left: 3px solid #545454;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+.riwayat-pendidikan-data p {
+    margin: 0;
+}
+
+@media screen and (max-width: 900px) {
+    .hero {
+        display: block;
+        text-align: center;
+    }
+}
