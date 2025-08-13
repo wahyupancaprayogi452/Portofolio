@@ -1,200 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello - Namaku Wahyu</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            background: linear-gradient(135deg, #05363f,#080537, #2d0431,#37042a, #010006);
-            color: #f0f0f0;
-            min-height: 100vh;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hello - Namaku Wahyu</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
 
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        background: linear-gradient(135deg,#010006, #05363f,#080537, #2d0431,#37042a, #010006);
+        color: #f0f0f0;
+        min-height: 100vh;
+    }
+
+    .hero {
+        display: flex;
+        gap: 30px;
+        padding: 80px 10%;
+        min-height: 300px;
+        background: 
+            linear-gradient(to right, rgba(0,0,0,0.75), rgba(0,0,0,0.25)),
+            url('assets/img/back5.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        align-items: center;
+        color: white;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        box-shadow: 0 4px 15px rgba(69, 78, 182, 0.5);
+    }
+
+    .hero-picture img {
+        border-radius: 100%;
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 4px solid #0078d7;
+        cursor: pointer;
+    }
+
+    .hero-picture img:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 6px 15px whitesmoke;
+    }
+
+    .hero-desc h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+
+    .hero-desc h2 {
+        margin: 10px 0;
+        font-weight: 400;
+        color: #b0b0b0;
+    }
+
+    .hero-desc button,
+    .hubungi-btn {
+        padding: 10px 25px;
+        border-radius: 30px;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: bold;
+        margin-top: 10px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .hero-desc button {
+        background: linear-gradient(45deg, #12b2ce, #3b0d76);
+        color: white;
+        box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
+    }
+
+    .hubungi-btn {
+        background: linear-gradient(45deg, #25D366, #128C7E);
+        color: white;
+        box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
+    }
+    .hero-desc button:hover,
+    .hubungi-btn:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 6px 15px whitesmoke;
+    }
+
+    .hero-desc button a,
+    .hubungi-btn a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .about, .data-portofolio {
+        margin: 50px auto;
+        max-width: 900px;
+        background-color: rgb(32, 21, 31);
+        padding: 30px;
+        border-radius: 20px;
+        animation: fadeInUp 1s ease-in-out;
+    }
+
+    .about h2,
+    .data-diri h2,
+    .pengalaman h2 {
+        color: #00d9ff;
+    }
+
+    .selengkapnya-btn {
+        padding: 10px 25px;
+        border-radius: 30px;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: bold;
+        margin-top: 15px;
+        background: linear-gradient(45deg, #12b2ce, #3b0d76);
+        color: rgb(27, 229, 232);
+        box-shadow: 0 4px 10px rgba(48, 235, 238, 0.4);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .selengkapnya-btn:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 6px 15px rgb(49, 187, 189);
+    }
+
+    .selengkapnya-btn a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .data-portofolio {
+        display: flex;
+        gap: 20px;
+    }
+
+    .data-diri {
+        width: 50%;
+    }  
+    
+    .riwayat-pendidikan {
+        color: #00d9ff;
+        max-width: 900px;
+        margin: 50px auto;
+        background-color: rgb(32, 21, 31);
+        padding: 30px;
+        border-radius: 20px;
+        animation: fadeInUp 1s ease-in-out;
+    }
+
+    .edu-container {
+        margin-top: 20px;
+    }
+
+    .edu-card {
+        display: flex;
+        align-items: center;
+        background: linear-gradient(45deg, #04282e, #1a0536);
+        padding: 15px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 2px #ffffff;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .edu-card:hover {
+        transform: scale(1.02);
+        box-shadow: 0 6px 15px rgb(255, 255, 255);
+    }
+
+    .edu-image {
+        flex-shrink: 0;
+        margin-right: 15px;
+    }
+
+    .edu-image img {
+        width: 300px;
+        height: 200px;
+        border-radius: 20px;
+        object-fit: cover;
+    }
+
+    .edu-text h3 {
+        margin: 0;
+        font-size: 1.2em;
+        color: #00d9ff;
+    }
+
+    .edu-text p {
+        margin: 5px 0 0;
+        color: #ccc;
+        font-size: 0.9em;  
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .edu-text button {
+        padding: 10px 25px;
+        border-radius: 30px;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: bold;
+        margin-top: 15px;
+        background: linear-gradient(45deg, #ffffff);
+        box-shadow: 0 4px 10px rgb(255, 255, 255);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .social-icon {
+        margin-top: 15px;
+    }
+    
+    .social-icon a {
+        color: #f0f0f0;
+        font-size: 1.5rem;
+        margin-right: 15px;
+        transition: color 0.3s;
+    }
+
+    .social-icon a[href*="instagram.com"]:hover { color: #E1306C; }
+    .social-icon a[href*="github.com"]:hover { color: #323031; }
+    .social-icon a[href*="wa.me"]:hover { color: #25D366; }
+    .social-icon a[href*="youtube.com"]:hover { color: #FF0000; }
+
+    footer {
+        background-color: #141414;
+        padding: 20px;
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .footer-logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #00d9ff;
+    }
+
+    .footer-social a {
+        color: white;
+        font-size: 1.5rem;
+        margin: 0 5px;
+        transition: color 0.3s ease;
+    }
+
+    .footer-social a[href*="instagram.com"]:hover { color: #E1306C; }
+    .footer-social a[href*="github.com"]:hover { color: #323031; }
+    .footer-social a[href*="wa.me"]:hover { color: #25D366; }
+    .footer-social a[href*="youtube.com"]:hover { color: #FF0000; }
+    
+    .footer-copy {
+        font-size: 0.9rem;
+        color: #888;
+        margin-top: 10px;
+    }
+
+    @media screen and (max-width: 768px) {
         .hero {
-            display: flex;
-            gap: 30px;
-            padding: 80px 10%;
-            min-height: 300px;
-            background: 
-                linear-gradient(to right, rgba(0,0,0,0.75), rgba(0,0,0,0.25)),
-                url('assets/img/back.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            align-items: center;
-            color: white;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            box-shadow: 0 4px 15px rgba(69, 78, 182, 0.5);
-        }
-        .hero-picture img {
-            border-radius: 100%;
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-            border: 4px solid #0078d7;
-        }
-        .hero-picture img:hover {
-            transform: scale(1.05);
-        }
-        .hero-desc h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        .hero-desc h2 {
-            margin: 10px 0;
-            font-weight: 400;
-            color: #b0b0b0;
-        }
-        .hero-desc button {
-            padding: 10px 20px;
-            background: #0078d7;
-            color: white;
-            border-radius: 25px;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background 0.3s ease;
-        }
-        .hero-desc button:hover {
-            background: #005fa3;
-        }
-        .hero-desc button a {
-            text-decoration: none;
-            color: white;
-        }
-
-        .about {
-            margin: 50px auto;
-            max-width: 900px;
-            background-color: rgb(32, 21, 31);
-            padding: 30px;
-            border-radius: 20px;
-        }
-        .about h2 {
-            margin-top: 0;
-            color: #00d9ff;
+            flex-direction: column;
+            text-align: center;
+            padding: 50px 20px;
         }
 
         .data-portofolio {
-            margin: 50px auto;
-            max-width: 900px;
-            display: flex;
-            gap: 20px;
-            padding: 30px;
-            border-radius: 20px;
-            background-color: rgb(32, 21, 31);
-        }
-        .data-diri, .riwayat-pendidikan {
-            width: 50%;
+            flex-direction: column;
         }
 
-        .data-diri h2, .riwayat-pendidikan h2 {
-            color: #00d9ff
+        .data-diri {
+            width: 100%;
         }
 
-        .riwayat-pendidikan-data {
-            border-left: 3px solid #00d9ff;
-            padding-left: 10px;
-            margin-bottom: 10px;
-        }
-
-        .social-icons {
-            margin-top: 15px;
-        }
-        .social-icons a {
-            color: #f0f0f0;
-            font-size: 1.5rem;
-            margin-right: 15px;
-            transition: color 0.3s;
-        }
-        .social-icons a:hover {
-            color: #00d9ff;
-        }
-
-        footer {
-            background-color: #141414;
-            padding: 20px;
-            margin-top: 40px;
+        .riwayat-pendidikan {
+            flex-direction: column;
             text-align: center;
-        }
-        .footer-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #00d9ff;
-        }
-        .footer-social a {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: color 0.3s ease;
-            }
-        .footer-social a:hover {
-            color: #00d9ff;
-        }
-        .footer-copy {
-            font-size: 0.9rem;
-            color: #888;
-            margin-top: 10px;
+            padding: 50px 20px;
         }
 
-        @media screen and (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 50px 20px;
-                min-height: 400px;
-                background: 
-                    linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.25)),
-                    url('assets/img/back.jpeg');
-                background-size: cover;
-                background-position: center;
-            }
-            .data-portofolio {
-                flex-direction: column;
-                text-align: left;
-            }
-            .data-diri, .riwayat-pendidikan {
-                width: 100%;
-            }
+        .edu-card {
+            flex-direction: column;
+            text-align: center;
+            padding: 50px 20px;
         }
-    </style>
+
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .foto {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.8);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modlimg {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+</style>
 </head>
 <body>
 
     <div class="hero">
         <div class="hero-picture">
-            <img src="assets/img/halo.png" alt="Foto Wahyu">
+            <img src="assets/img/halo.png" alt="Foto Wahyu" id="profilePic">
         </div>
         <div class="hero-desc">
             <h1>Hallo 👋</h1>
             <h2>Saya Wahyu - Web Developer</h2>
-            <button><a href="">Selengkapnya</a></button>
-            <div class="social-icons">
-                <a href="https://www.instagram.com/wxyz07_scrt/"                    target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://github.com/wahyupancaprayogi452"                   target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://wa.me/6288274380861"                               target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.youtube.com/channel/UCCfSuYs3rVsx1OVpuINKdNw"  target="_blank"><i class="fab fa-youtube"></i></a>
+            <button class="hubungi-btn"><a href="https://wa.me/6288274380861" target="_blank">Hubungi Saya</a></button>
+            <div class="social-icon">
+                <a href="https://www.instagram.com/wxyz07_scrt/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/wahyupancaprayogi452" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://wa.me/6288274380861" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.youtube.com/channel/UCCfSuYs3rVsx1OVpuINKdNw" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </div>
 
+
+    <div class="foto" id="foto">
+        <img id="modelimg" src="" alt="Foto Besar">
+    </div>
+
     <div class="about">
         <h2>Tentang Saya</h2>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto eligendi tempore corrupti nemo repudiandae eaque ipsam sed quidem, aliquam reiciendis, delectus laudantium sapiente necessitatibus. Distinctio perspiciatis asperiores rerum inventore eveniet?
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem dolor illo adipisci accusamus quisquam officiis id beatae minus, sapiente aperiam officia velit esse quaerat? Cum veritatis numquam sunt fugiat 
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In doloribus doloremque sint error natus saepe nam quibusdam pariatur enim distinctio minima illo, quia porro, ratione soluta reprehenderit qui dolore officia.
+            </p>
+        <button class="selengkapnya-btn"><a href="#">Selengkapnya</a></button>
     </div>
 
     <div class="data-portofolio">
@@ -208,19 +370,8 @@
                 <li>Hobby : Game</li>
             </ul>
         </div>
-        <div class="riwayat-pendidikan">
-            <h2>Riwayat Pendidikan</h2>
-            <div class="riwayat-pendidikan-data">
-                <b>SMP Kristen 1 Metro</b>
-                <p>2021 s.d 2024</p>
-            </div>
-            <div class="riwayat-pendidikan-data">
-                <b>SMK Negeri 3 Metro</b>
-                <p>2024</p>
-            </div>
-        </div>
     </div>
-    
+
     <div class="data-portofolio">
         <div class="data-diri">
             <h2>Skill</h2>
@@ -230,7 +381,7 @@
                 <li>Javascript</li>
             </ul>
         </div>
-        <div class="riwayat-pendidikan">
+        <div class="pengalaman">
             <h2>Pengalaman</h2>
             <ul>
                 <li>Juara 1 Olimpiade Matematika Tingkat Provinsi</li>
@@ -238,19 +389,61 @@
         </div>
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <i class="fa-solid fa-code"></i> Wahyu
+    <div class="riwayat-pendidikan">
+        <h2>Riwayat Pendidikan</h2>
+        <div class="edu-container">
+            <div class="edu-card">
+                <div class="edu-image">
+                <img src="assets/img/smpk.png" alt="SMP Kristen 1 Metro">
             </div>
+                <div class="edu-text">
+                    <h3>SMP Kristen 1 Metro</h3>
+                    <p>2021 - 2024</p>
+                    <button><a href="https://maps.app.goo.gl/TnMCe3PSXBbEVqFz6">Maps</a></button>
+                </div>
+            </div>
+
+            <div class="edu-card">
+                <div class="edu-image">
+                    <img src="assets/img/smk.jpg" alt="SMK Negeri 3 Metro">
+                </div>
+                <div class="edu-text">
+                    <h3>SMK Negeri 3 Metro</h3>
+                    <p>2024 - Sekarang</p>
+                    <button><a href="https://maps.app.goo.gl/KLmgNFB4XKKbZLecA">Maps</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+
+    <footer>
+        <div class="footer">
+            <div class="footer-logo"><i class="fa-solid fa-code"></i> Wahyu</div>
             <div class="footer-social">
-                <a href="https://www.instagram.com/wxyz07_scrt/"                    target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://wa.me/6288274380861"                               target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.youtube.com/channel/UCCfSuYs3rVsx1OVpuINKdNw"  target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/wxyz07_scrt/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/wahyupancaprayogi452" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://wa.me/6288274380861" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.youtube.com/channel/UCCfSuYs3rVsx1OVpuINKdNw" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
         <p class="footer-copy">&copy; 2025 Wahyu. All rights reserved.</p>
     </footer>
-    
+
+<script>
+
+    const profilePic = document.getElementById("profilePic");
+    const foto = document.getElementById("foto");
+    const modelimg = document.getElementById("modelimg");
+
+    profilePic.onclick = function() {
+        foto.style.display = "flex";
+        modelimg.src = this.src;
+    }
+    foto.onclick = function() {
+        foto.style.display = "none";
+    }
+
+</script>
 </body>
 </html>
